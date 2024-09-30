@@ -17,6 +17,7 @@ async function setupDiscordSdk() {
     response_type:"code",
     state: "",
     scope:[
+      "identify"
     ],
   });
   console.log("code:"+ret);
