@@ -20,7 +20,7 @@ async function setupDiscordSdk() {
       "identify"
     ],
   });
-  console.log("code:"+ret);
+  console.log("code:"+ret.code);
 }
 
 setupDiscordSdk().then(() => {
