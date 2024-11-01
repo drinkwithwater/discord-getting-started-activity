@@ -22,4 +22,8 @@ export default defineConfig({
       clientPort: 443,
     },
   },
+  build: {
+	cssMinify: false, // Deactivate esbuild and use cssnano for CSS only
+	minify: false,
+  }
 });

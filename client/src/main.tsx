@@ -17,13 +17,14 @@ async function setupDiscordSdk() {
     response_type:"code",
     state: "",
     scope:[
-      "identify"
+      "identify",
+      "voice" as any
     ],
   });
   console.log("code:"+ret.code);
 }
 
-setupDiscordSdk().then(() => {
+setupDiscordSdk().then(()=>{
   console.log("Discord SDK is ready");
 });
 
