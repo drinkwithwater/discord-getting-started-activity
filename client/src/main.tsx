@@ -18,6 +18,7 @@ async function setupDiscordSdk() {
     state: "",
     scope:[
       "identify",
+      "rpc.voice.read",
     ],
   });
   const response = await fetch(".proxy/discord/discord_auth", {
