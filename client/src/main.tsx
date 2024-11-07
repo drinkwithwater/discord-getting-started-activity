@@ -21,7 +21,15 @@ async function setupDiscordSdk() {
       "voice" as any
     ],
   });
-  console.log("code:"+ret.code);
+  const response = await fetch("https://sing.echouni.cn/discord/discord_auth", {
+    method:"POST",
+    body:JSON.stringify({
+      code:ret.code,
+    }),
+  })
+  console.log(response)
+  const authResult = await response.json();
+  console.log(authResult)
 }
 
 setupDiscordSdk().then(()=>{
