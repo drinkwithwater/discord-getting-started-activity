@@ -25,6 +25,9 @@ async function setupDiscordSdk() {
     body:JSON.stringify({
       code:ret.code,
     }),
+    headers: {
+      "Content-Type": "application/json",
+    },
   })
   console.log("response", response)
   const authResult = await response.json() as {
