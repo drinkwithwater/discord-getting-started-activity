@@ -18,7 +18,6 @@ async function setupDiscordSdk() {
     state: "",
     scope:[
       "identify",
-      "voice" as any
     ],
   });
   const response = await fetch(".proxy/discord/discord_auth", {
