@@ -26,9 +26,15 @@ async function setupDiscordSdk() {
       code:ret.code,
     }),
   })
-  console.log(response)
-  const authResult = await response.json();
-  console.log(authResult)
+  console.log("response", response)
+  const authResult = await response.json() as {
+    access_token:string
+  };
+  console.log("authResult", authResult)
+  const auth2 = await discordSdk.commands.authenticate({
+    access_token:authResult.access_token,
+  });
+  console.log("auth2", auth2)
 }
 
 setupDiscordSdk().then(()=>{
