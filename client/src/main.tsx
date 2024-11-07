@@ -18,9 +18,7 @@ async function setupDiscordSdk() {
     state: "",
     scope:[
       "identify",
-      "voice" as any,
       "rpc.voice.read",
-      "connections",
     ],
   });
   const response = await fetch(".proxy/discord/discord_auth", {
@@ -41,6 +39,9 @@ async function setupDiscordSdk() {
     access_token:authResult.access_token,
   });
   console.log("auth2", auth2)
+  discordSdk.commands.getChannel({
+    channel_id:discordSdk.channelId,
+  });
 }
 
 setupDiscordSdk().then(()=>{
