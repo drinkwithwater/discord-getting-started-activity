@@ -12,6 +12,7 @@ let discordSdk:DiscordSDK = null;
 async function setupDiscordSdk() {
   discordSdk = new DiscordSDK("1283000047155544066")
   await discordSdk.ready();
+  console.log(discordSdk.guildId, discordSdk.channelId, discordSdk.clientId)
   let ret = await discordSdk.commands.authorize({
     client_id:discordSdk.clientId,
     response_type:"code",
