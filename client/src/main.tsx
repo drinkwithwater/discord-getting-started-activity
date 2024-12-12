@@ -17,6 +17,7 @@ async function setupDiscordSdk() {
     client_id:discordSdk.clientId,
     response_type:"code",
     state: "",
+    prompt:"none",
     scope:[
       "identify",
       "guilds.members.read",
